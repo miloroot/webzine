@@ -7,6 +7,10 @@
 	background-color: lightpink;
 }
 
+.main {
+	background-color: lightgreen;
+}
+
 /* TAGS/NATIVE */
 nav ul li {
 	display: inline-block;
