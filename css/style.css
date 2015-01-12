@@ -1,0 +1,13 @@
+/* CLASSES */
+.header {
+	background-color: lightgray;
+}
+
+.navigation {
+	background-color: lightpink;
+}
+
+/* TAGS/NATIVE */
+nav ul li {
+	display: inline-block;
+}
