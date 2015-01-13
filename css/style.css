@@ -7,14 +7,14 @@
 
 .bigtxt {
 	font-family: 'Pacifico', cursive;
-	font-size: 78px;
+	font-size: 100px;
 	color: #FFFFFF;
 	margin-top: 80px;
 }
 
 .navigation {
 	background-color: #FFFFFF;
-	margin-top: 10px;
+	margin-top: 0px;
 }
 
 .main {
@@ -27,3 +27,14 @@
 */
 
 /* TAGS/NATIVE */
+body {
+	font-family: 'Droid Sans', sans-serif;
+}
+
+a {
+	color: purple;
+}
+
+a:hover {
+	color: purple;
+}
