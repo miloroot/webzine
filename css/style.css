@@ -6,6 +6,7 @@
 	background-image: url(../imgs/bannerbg01.jpg);
 	height: 182px;
 	text-align: center;
+	box-shadow: 0 8px 8px -8px #333;
 }
 
 .bigtxt {
