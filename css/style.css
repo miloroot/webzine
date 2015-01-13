@@ -1,14 +1,24 @@
 /* CLASSES */
 .header {
-	background-color: lightgray;
+	background-image: url(../imgs/bannerbg01.jpg);
+	height: 182px;
+	text-align: center;
+}
+
+.bigtxt {
+	font-family: 'Pacifico', cursive;
+	font-size: 78px;
+	color: #FFFFFF;
+	margin-top: 80px;
 }
 
 .navigation {
-	background-color: lightpink;
+	background-color: #FFFFFF;
+	margin-top: 10px;
 }
 
 .main {
-	background-color: lightgreen;
+	background-color: #FFFFFF;
 }
 
 /*
@@ -17,6 +27,3 @@
 */
 
 /* TAGS/NATIVE */
-nav ul li {
-	display: inline-block;
-}
