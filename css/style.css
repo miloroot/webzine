@@ -1,4 +1,7 @@
-/* CLASSES */
+/* CLASSES 
+
+*/
+
 .header {
 	background-image: url(../imgs/bannerbg01.jpg);
 	height: 182px;
@@ -26,16 +29,15 @@
 	background-color: #FFFFFF;
 }
 
-.latestnews {
-	background-color: #D4D4D2;
-}
-
 /*
 
 
 */
 
-/* TAGS/NATIVE */
+/* TAGS/NATIVE 
+
+*/
+
 body {
 	font-family: 'Droid Sans', sans-serif;
 }
