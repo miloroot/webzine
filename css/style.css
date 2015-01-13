@@ -12,13 +12,22 @@
 	margin-top: 80px;
 }
 
+.minitxt {
+	font-family: 'Pacifico', cursive;
+}
+
 .navigation {
 	background-color: #FFFFFF;
 	margin-top: 0px;
+	margin-bottom: 10px;
 }
 
 .main {
 	background-color: #FFFFFF;
+}
+
+.latestnews {
+	background-color: #D4D4D2;
 }
 
 /*
