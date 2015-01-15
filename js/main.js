@@ -21,9 +21,12 @@ $(function() {
 		$.ajax({
 			url: "php/data.php",
 			dataType: "json",
-			data: $('.searchField').val(),
+			data: {
+				makeASearch: $('.searchField').val()
+			},
 			success: function(data) {
 				console.log('Success data: ', data);
+				$('.searchResult').html(data.title + '<br>' + data.body);
 			},
 			error: function(data) {
 				console.log('Error data: ', data);
