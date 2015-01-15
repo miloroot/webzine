@@ -16,4 +16,21 @@ $(function() {
 		}
 	});
 
+	// getting the search function working
+	$('.searchForm').submit(function() {
+		$.ajax({
+			url: "php/data.php",
+			dataType: "json",
+			data: $('.searchField').val(),
+			success: function(data) {
+				console.log('Success data: ', data);
+			},
+			error: function(data) {
+				console.log('Error data: ', data);
+			}
+		})
+
+		return false;
+	})
+
 });
