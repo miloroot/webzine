@@ -26,7 +26,12 @@ $(function() {
 			},
 			success: function(data) {
 				console.log('Success data: ', data);
-				$('.searchResult').html(data.title + '<br>' + data.body);
+
+				var title = '<h2>' + data.title + '</h2>';
+				var body = '<p>' + data.body + '</p>';
+				var timestamp = '<small>Post created on: ' + data.created + '</small>';
+
+				$('.searchResult').html(title + body + timestamp);
 			},
 			error: function(data) {
 				console.log('Error data: ', data);
