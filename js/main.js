@@ -24,9 +24,6 @@ $(function() {
 			data: $('.searchField').val(),
 			success: function(data) {
 				console.log('Success data: ', data);
-				for(var i in data) {
-					console.log('Loop data: ', data);
-				}
 			},
 			error: function(data) {
 				console.log('Error data: ', data);
