@@ -12,7 +12,6 @@
 		$pdo = new PDO($host, $dbname, $dbpass, $options);
 
 
-		if(isset($_REQUEST)) {
 			// SQL-questions to search after a page
 			$search_param = $_REQUEST['makeASearch'];
 
@@ -22,4 +21,3 @@
 			$data = $dbh->fetch();
 
 			echo json_encode($data);
-		}
