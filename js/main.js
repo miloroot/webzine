@@ -19,7 +19,7 @@ $(function() {
 	// getting the search function working
 	$('.searchForm').submit(function() {
 		$.ajax({
-			url: "php/data.php",
+			url: "php/search.php",
 			dataType: "json",
 			data: {
 				makeASearch: $('.searchField').val()
@@ -40,5 +40,9 @@ $(function() {
 
 		return false;
 	})
+
+
+	// creating a new page
+	
 
 });
