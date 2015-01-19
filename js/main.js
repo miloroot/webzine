@@ -47,7 +47,6 @@ $(function() {
 	$('.postPageForm').submit(function() {
 		$.ajax({
 			url: "php/postnewpage.php",
-			dataType: "json",
 			data: {
 				title: $('.titleField').val(),
 				body: $('.pageBody').val()
