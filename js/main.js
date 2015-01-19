@@ -26,6 +26,7 @@ $(function() {
 			},
 			success: function(data) {
 				console.log('Success data: ', data);
+				console.log('User ID/name: ', data.user_id);
 
 				var title = '<h2>' + data.title + '</h2>';
 				var body = '<p>' + data.body + '</p>';
@@ -43,6 +44,23 @@ $(function() {
 
 
 	// creating a new page
-	
+	$('.postPageForm').submit(function() {
+		$.ajax({
+			url: "php/postnewpage.php",
+			dataType: "json",
+			data: {
+				title: $('.titleField').val(),
+				body: $('.pageBody').val()
+			},
+			success: function(data) {
+				console.log('Success data: ', data);
+			},
+			error: function(data) {
+				console.log('Error data: ', data);
+			}
+		});
+
+		return false;
+	});
 
 });
