@@ -21,3 +21,8 @@
 			$data = $dbh->fetch();
 
 			echo json_encode($data);
+
+
+			// SQL-questions to add new page
+			// atm hardcoded in wich users creates the page
+			
