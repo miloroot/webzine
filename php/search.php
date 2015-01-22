@@ -9,6 +9,11 @@
 	$sql_getPages = "SELECT pages.pid, pages.title, pages.body, pages.created, CONCAT(users.fname, ' ', users.lname) as author FROM pages, users WHERE pages.title LIKE :search_param";
 	$dbh = $pdo->prepare($sql_getPages);
 	$dbh->execute([':search_param' => "%".$search_param."%"]);
-	$data = $dbh->fetch();
+	$data = $dbh->fetchAll();
 
-	echo json_encode($data);
+	if (!$data) {
+		echo json_encode("No records!");
+	} else {
+		echo json_encode($data);
+	}
+

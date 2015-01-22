@@ -25,7 +25,7 @@ $(function() {
 				makeASearch: $('.searchField').val()
 			},
 			success: function(data) {
-				console.log('Success data: ', data);
+				/*console.log('Success data: ', data);
 				console.log('User ID/name: ', data.author);
 
 				var title = '<h2>' + data.title + '</h2>';
@@ -33,7 +33,19 @@ $(function() {
 				var timestamp = '<small>Post created on: ' + data.created + '</small> <br>';
 				var author = '<small>Authored by: ' + data.author + '</small>';
 
-				$('.searchResult').html(title + body + timestamp + author);
+				$('.searchResult').html(title + body + timestamp + author);*/
+
+				$('.searchResult').html(" ");
+				for (var i in data) {
+					console.log('Loop data: ', data[i].title);
+
+					var title = '<h2>' + data[i].title + '</h2>';
+					var body = '<p>' + data[i].body + '</p>';
+					var timestamp = '<small>Post created on: ' + data[i].created + '</small> <br>';
+					var author = '<small>Authored by: ' + data[i].author + '</small>';
+
+					$('.searchResult').append(title + body + timestamp + author);
+				}
 			},
 			error: function(data) {
 				console.log('Error data: ', data);
