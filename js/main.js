@@ -49,13 +49,35 @@ $(function() {
 			url: "php/postnewpage.php",
 			data: {
 				title: $('.titleField').val(),
-				body: $('.pageBody').val()
+				body: $('.pageBody').val(),
+				pathen: $('.pageURLField').val(),
+				pid: $('.pageID').val()
 			},
 			success: function(data) {
 				console.log('Success data: ', data);
 			},
 			error: function(data) {
 				console.log('Error data: ', data);
+			}
+		});
+
+		return false;
+	});
+
+
+	// getting pageURL and pageID
+	$('.postPageForm').submit(function() {
+		$.ajax({
+			url: "php/pageurlid.php",
+			data: {
+				pathen: $('.pageURLField').val(),
+				pid: $('.pageID').val()
+			},
+			success: function(data) {
+				console.log('PageURL and ID success: ', data); 
+			},
+			error: function(data) {
+				console.log('PageURL and ID error: ', data);
 			}
 		});
 

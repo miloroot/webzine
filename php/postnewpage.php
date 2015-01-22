@@ -5,6 +5,7 @@
 
 	// SQL-questions to add new page
 	// atm hardcoded in wich users creates the page
+	// this chunk will insert data to pages-table
 	$user_id = 1;
 
 	$title = $_REQUEST['title'];
