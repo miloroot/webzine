@@ -26,13 +26,14 @@ $(function() {
 			},
 			success: function(data) {
 				console.log('Success data: ', data);
-				console.log('User ID/name: ', data.user_id);
+				console.log('User ID/name: ', data.author);
 
 				var title = '<h2>' + data.title + '</h2>';
 				var body = '<p>' + data.body + '</p>';
-				var timestamp = '<small>Post created on: ' + data.created + '</small>';
+				var timestamp = '<small>Post created on: ' + data.created + '</small> <br>';
+				var author = '<small>Authored by: ' + data.author + '</small>';
 
-				$('.searchResult').html(title + body + timestamp);
+				$('.searchResult').html(title + body + timestamp + author);
 			},
 			error: function(data) {
 				console.log('Error data: ', data);
@@ -54,10 +55,10 @@ $(function() {
 				pid: $('.pageID').val()
 			},
 			success: function(data) {
-				console.log('Success data: ', data);
+				console.log('Create new page success data: ', data);
 			},
 			error: function(data) {
-				console.log('Error data: ', data);
+				console.log('Create new page error data: ', data);
 			}
 		});
 
@@ -71,7 +72,6 @@ $(function() {
 			url: "php/pageurlid.php",
 			data: {
 				pathen: $('.pageURLField').val(),
-				pid: $('.pageID').val()
 			},
 			success: function(data) {
 				console.log('PageURL and ID success: ', data); 
