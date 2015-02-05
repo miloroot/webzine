@@ -63,8 +63,7 @@ $(function() {
 			data: {
 				title: $('.titleField').val(),
 				body: $('.pageBody').val(),
-				pathen: $('.pageURLField').val(),
-				pid: $('.pageID').val()
+				pathen: $('.pageURLField').val()
 			},
 			success: function(data) {
 				console.log('Create new page success data: ', data);
@@ -79,7 +78,7 @@ $(function() {
 
 
 	// getting pageURL and pageID
-	$('.postPageForm').submit(function() {
+	/*$('.postPageForm').submit(function() {
 		$.ajax({
 			url: "php/pageurlid.php",
 			data: {
@@ -94,6 +93,6 @@ $(function() {
 		});
 
 		return false;
-	});
+	});*/
 
 });

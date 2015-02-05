@@ -6,15 +6,24 @@
 	// SQL-questions to add new page
 	// atm hardcoded in wich users creates the page
 	// this chunk will insert data to pages-table
-	$user_id = 1;
 
-	$title = $_REQUEST['title'];
-	$body = $_REQUEST['body'];
+	$body = [
+		'title' => $_REQUEST['title'],
+		'body' => $_REQUEST['body'],
+		'user_id' => 1,
+		'pathen' => $_REQUEST['pathen']
+	];
 
-	$sql_postNewPage = 'INSERT INTO pages (title, body, user_id) VALUES (:title, :body, :user_id)';
-	$dbh_pnp = $pdo->prepare($sql_postNewPage);
-	$dbh_pnp->execute([
-			':title' => $title,
-			':body' => $body,
-			':user_id' => $user_id,
-	]);
+	$sql_postNewPage = 
+	'INSERT INTO pages (title, body, user_id) VALUES (:title, :body, :user_id);
+	 INSERT INTO  url_alias(pathen) VALUES (:pathen);';
+
+	 $params = [
+	 	':title' => $body['title'],
+	 	':body' => $body['body'],
+	 	':user_id' => $body['user_id'],
+	 	':pathen' => $body['pathen']
+	 ];
+
+	 $dbh_pnp = $pdo->prepare($sql_postNewPage);
+	 $dbh_pnp->execute($params);
