@@ -25,6 +25,16 @@ $(function() {
 		data: "latestpost",
 		success: function(data) {
 			console.log("Success data latest post: ", data);
+
+			for (var i in data) {
+				console.log("Latest loop data: ", data[i].title);
+
+				var latest_title = data[i].title;
+				var latest_body = data[i].body;
+
+				$('.latestTitle').append(latest_title);
+				$('.latestBody').append(latest_body);
+			}
 		},
 		error: function(data) {
 			console.log("Error data latest post: ", data);
