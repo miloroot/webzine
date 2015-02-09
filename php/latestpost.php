@@ -5,7 +5,7 @@
 
 	$_REQUEST['latestpost'];
 
-	$sql_getLatestPost = 'SELECT * FROM pages ORDER BY pid DESC LIMIT 1;';
+	$sql_getLatestPost = "SELECT pages.pid, pages.title, pages.body, pages.created, CONCAT(users.fname, ' ', users.lname) as author FROM pages, users ORDER BY pid DESC LIMIT 1;";
 	$dbh_lp = $pdo->prepare($sql_getLatestPost);
 	$dbh_lp->execute();
 	$data_lp = $dbh_lp->fetchAll();
@@ -15,3 +15,5 @@
 	} else {
 		echo json_encode($data_lp);
 	}
+
+	// SELECT * FROM pages ORDER BY pid DESC LIMIT 1;

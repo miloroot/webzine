@@ -31,9 +31,12 @@ $(function() {
 
 				var latest_title = data[i].title;
 				var latest_body = data[i].body;
+				var latest_author = data[i].author;
+				var latest_timestamp = data[i].created;
 
 				$('.latestTitle').append(latest_title);
 				$('.latestBody').append(latest_body);
+				$('.latestAuthor').append('- ' + latest_author + '.' + ' ' + latest_timestamp);
 			}
 		},
 		error: function(data) {
