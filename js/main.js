@@ -16,6 +16,22 @@ $(function() {
 		}
 	});
 
+
+	// getting latest "post"/"page", and showing it
+	// in the "latest"-section in index.html
+	$.ajax({
+		url: "php/latestpost.php",
+		dataType: "json",
+		data: "latestpost",
+		success: function(data) {
+			console.log("Success data latest post: ", data);
+		},
+		error: function(data) {
+			console.log("Error data latest post: ", data);
+		}
+	});
+
+
 	// getting the search function working
 	$('.searchForm').submit(function() {
 		$.ajax({
