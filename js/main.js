@@ -57,14 +57,19 @@ $(function() {
 
 				$('.searchResult').html(" ");
 				for (var i in data) {
-					console.log('Loop data: ', data[i].title);
+					if (data[i].title == undefined) {
+						$('.searchResult').html("<h3>No results matching search query.</h3>");
+					}
+					else {
+						console.log('Loop data: ', data[i].title);
 
-					var title = '<h2>' + data[i].title + '</h2>';
-					var body = '<p>' + data[i].body + '</p>';
-					var timestamp = '<small>Post created on: ' + data[i].created + '</small> <br>';
-					var author = '<small>Authored by: ' + data[i].author + '</small>';
+						var title = '<h2>' + data[i].title + '</h2>';
+						var body = '<p>' + data[i].body + '</p>';
+						var timestamp = '<small>Post created on: ' + data[i].created + '</small> <br>';
+						var author = '<small>Authored by: ' + data[i].author + '</small>';
 
-					$('.searchResult').append(title + body + timestamp + author);
+						$('.searchResult').append(title + body + timestamp + author);
+					}
 				}
 			},
 			error: function(data) {
