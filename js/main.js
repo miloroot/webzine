@@ -4,17 +4,22 @@ $(function() {
 	console.log('Hello world, this is a webzine.');
 
 	//Just a thing for fun! 
-	$('.login').click(function() {
+	$('.login').on("click", (function() {
 		var pw = prompt('Enter correct password:');
 		if(pw == "google") {
-			$('body').load('admin.html', function() {
-				alert('You logged in successfully!');
+
+			$.ajax({
+				url: "templates/search_template.html",
+				cache: false,
+				success: function(html) {
+					$('body').html(html);
+				}
 			});
 		}
 		else {
 			alert('Bad password!');
 		}
-	});
+	}));
 
 
 	// getting latest "post"/"page", and showing it
@@ -59,6 +64,7 @@ $(function() {
 				for (var i in data) {
 					if (data[i].title == undefined) {
 						$('.searchResult').html("<h3>No results matching search query.</h3>");
+
 					}
 					else {
 						console.log('Loop data: ', data[i].title);
