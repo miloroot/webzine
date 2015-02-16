@@ -3,13 +3,15 @@ $(function() {
 	// DOM-Ready and working? : YES.
 	console.log('Hello world, this is a webzine.');
 
-	//Just a thing for fun! 
+	// Just a thing for fun! 
+	// If pw is google, a template will be loaded
 	$('.login').on("click", (function() {
 		var pw = prompt('Enter correct password:');
 		if(pw == "google") {
 
 			$.ajax({
 				url: "templates/search_template.html",
+				dataType: "html",
 				cache: false,
 				success: function(html) {
 					$('body').html(html);
@@ -51,7 +53,7 @@ $(function() {
 
 
 	// getting the search function working
-	$('.searchForm').submit(function() {
+	$(document).on("submit", '.searchForm', function() {
 		$.ajax({
 			url: "php/search.php",
 			dataType: "json",
@@ -84,7 +86,7 @@ $(function() {
 		})
 
 		return false;
-	})
+	});
 
 
 	// creating a new page
