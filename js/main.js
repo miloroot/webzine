@@ -91,7 +91,7 @@ $(function() {
 
 	// creating a new page
 	// and giving it a "url"
-	$('.postPageForm').submit(function() {
+	$(document).on("submit", '.postPageForm', function() {
 		$.ajax({
 			url: "php/postnewpage.php",
 			data: {
@@ -104,6 +104,36 @@ $(function() {
 			},
 			error: function(data) {
 				console.log('Create new page error data: ', data);
+			}
+		});
+
+		return false;
+	});
+
+
+	// ajax to load Admin Tools tab
+	$(document).on("click", '#adminTools', function() {
+		$.ajax({
+			url: "templates/newpage_template.html",
+			dataType: "html",
+			cache: false,
+			success: function(html) {
+				$('body').html(html);
+			}
+		});
+
+		return false;
+	});
+
+
+	// ajax to load Search tab
+	$(document).on("click", '#search', function() {
+		$.ajax({
+			url: "templates/search_template.html",
+			dataType: "html",
+			cache: false,
+			success: function(html) {
+				$('body').html(html);
 			}
 		});
 

@@ -1,0 +1,76 @@
+		<!-- HEADER/TOP AREA -->
+		<section class="container-fluid">
+			<div class="row header">
+				<div class="col-md-12">
+					<h1 class="bigtxt">nerdzine_</h1>
+				</div>
+			</div>
+		</section>
+
+		<!-- NAVIGATION -->
+		<section class="container">
+			<div class="row navigation">
+				<div class="col-md-12">
+					<nav>
+						<ul class="nav nav-pills">
+							<li role="presentation"><a href="#">Home</a></li>
+							<li role="presentation"><a href="#">About</a></li>
+							<li role="presentation"><a href="#">Contact</a></li>
+							<li role="presentation"><a href="#">Links</a></li>
+							<li role="presentation" class="navbar-right"><button class="btn btn-info login">Log in <span class="glyphicon glyphicon-off"></span></button></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</section>
+
+		<!-- MAIN CONTENT AREA -->
+		<section class="container mainArea">
+			<div class="row main">
+				<div class="col-md-12">
+					<h1>Admin section.</h1>
+					<!-- ADMIN NAV TABS -->
+					<ul class="nav nav-tabs pushd">
+						<li role="presentation" id="search"><a href="#">Search <span class="glyphicon glyphicon-search"></span></a></li>
+						<li role="presentation" id="adminTools" class="active"><a href="#">Admin Tools <span class="glyphicon glyphicon-pencil"></span></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="row main">
+				<div class="col-md-6">
+					<!-- ADMIN CREATE NEW PAGE FORM -->
+					<form class="postPageForm">
+						<div class="form-group">
+							<label>Title:</label>
+							<input type="text" class="form-control titleField" placeholder="Title for new page...">
+						</div>
+						<div class="form-group">
+							<label>Page URL:</label>
+							<input type="text" class="form-control pageURLField" placeholder="URL for new page...">
+						</div>
+						<div class="form-group">
+							<label>Content:</label>
+							<textarea class="form-control pageBody" rows="4"></textarea>
+						</div>
+						<div class="form-group">
+							<button class="btn btn-primary" type="submit">Create page <span class="glyphicon glyphicon-plus"></span></button>
+						</div>
+					</form>
+				</div>
+				<div class="col-md-6">
+					<!-- CHOOSE WICH SECTION TO EDIT/POST TO -->
+					<label>Choice:</label>
+					<select class="form-control">
+						<option>Choose wich section to edit or post to.</option>
+						<option>--------------------EDIT--------------------</option>
+						<option>Edit front-page news #1</option>
+						<option>Edit front-page news #2</option>
+						<option>--------------------MAKE--------------------</option>
+						<option>Create new page.</option>
+						<option>Edit navigation links</option>
+						<option>--------------------INFO-------------------</option>
+						<option>Show all pages</option>
+					</select>
+				</div>
+			</div>
+		</section>
