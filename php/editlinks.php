@@ -4,15 +4,15 @@
 	require 'db.php';
 
 	$links = [
-		'text' => $_REQUEST['text'],
+		'title' => $_REQUEST['title'],
 		'path' => $_REQUEST['path']
 	];
 
 	$sql_modlinks = 
-	'INSERT INTO menu (text, path) VALUES (:text, :path);';
+	'INSERT INTO menu (title, path) VALUES (:title, :path);';
 
 	$param_links = [
-		':text' => $links['text'],
+		':title' => $links['title'],
 		':path' => $links['path']
 	];
 

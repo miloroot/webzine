@@ -123,8 +123,8 @@ $(function() {
 		$.ajax({
 			url: "php/editlinks.php",
 			data: {
-				text: $('.linkOne, .linkTwo, .linkThree, .linkFour').val(),
-				path: $('.linkOneURL, .linkTwoURL, .linkThreeURL, .linkFourURL').val()
+				title: $('.linkOne').val(),
+				path: $('.linkOneURL').val()
 			},
 			success: function(data) {
 				console.log('Edit links success-data: ', data);
