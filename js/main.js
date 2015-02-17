@@ -140,4 +140,19 @@ $(function() {
 		return false;
 	});
 
+
+	// ajax to load Edit links tab
+	$(document).on("click", '#editLinks', function() {
+		$.ajax({
+			url: "templates/editlinks_template.html",
+			dataType: "html",
+			cache: false,
+			success: function(html) {
+				$('body').html(html);
+			}
+		});
+
+		return false;
+	});
+
 });
