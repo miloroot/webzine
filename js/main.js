@@ -24,6 +24,13 @@ $(function() {
 	}));
 
 
+	/*
+	//
+	// SECTION BELOW IS AJAX's FOR FORMS.
+	//
+	*/
+
+
 	// getting latest "post"/"page", and showing it
 	// in the "latest"-section in index.html
 	$.ajax({
@@ -109,6 +116,33 @@ $(function() {
 
 		return false;
 	});
+
+
+	// modify/add links to main-nav
+	$(document).on("submit", '.editLinksForm', function() {
+		$.ajax({
+			url: "php/editlinks.php",
+			data: {
+				text: $('.linkOne, .linkTwo, .linkThree, .linkFour').val(),
+				path: $('.linkOneURL, .linkTwoURL, .linkThreeURL, .linkFourURL').val()
+			},
+			success: function(data) {
+				console.log('Edit links success-data: ', data);
+			},
+			error: function(data) {
+				console.log('Edit links error-data: ', data);
+			}
+		});
+
+		return false;
+	});
+
+
+	/*
+	//
+	// SECTION BELOW IS AJAX's FOR LOADING SITES VIA LINKS.
+	//
+	*/
 
 
 	// ajax to load Admin Tools tab
