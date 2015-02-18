@@ -26,7 +26,7 @@ $(function() {
 
 	/*
 	//
-	// SECTION BELOW IS AJAX's FOR FORMS.
+	// SECTION BELOW IS AJAX's THAT LOAD WHEN DOM IS READY.
 	//
 	*/
 
@@ -57,6 +57,33 @@ $(function() {
 			console.log("Error data latest post: ", data);
 		}
 	});
+
+	// get footer info from DB
+	$.ajax({
+		url: "php/footerinfo.php",
+		dataType: "json",
+		data: "footerInfo",
+		success: function(data) {
+			console.log("Success Footer data: ", data);
+
+			for (var i in data) {
+				var name = data[i].name;
+				var info = data[i].info;
+
+				$('.footerArea').append(name + '. ' + info);
+			}
+		},
+		error: function(data) {
+			console.log("Error Footer data: ", data);
+		}
+	});
+
+
+	/*
+	//
+	// SECTION BELOW IS AJAX's FOR FORMS.
+	//
+	*/
 
 
 	// getting the search function working
