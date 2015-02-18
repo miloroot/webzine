@@ -78,6 +78,30 @@ $(function() {
 		}
 	});
 
+	// workaround to get footer info from DB when pages are loaded via ajax.
+	// not pretty, but it works.
+	$(document).on("click", function() {
+		$.ajax({
+			url: "php/footerinfo.php",
+			dataType: "json",
+			data: "footerInfo",
+			success: function(data) {
+				console.log("Success Footer data: ", data);
+
+				for (var i in data) {
+					var name = data[i].name;
+					var info = data[i].info;
+
+					$('.footerArea').html(name + '. ' + info);
+				}
+			},
+			error: function(data) {
+				console.log("Error Footer data: ", data);
+			}
+		});
+	});
+
+
 
 	/*
 	//
