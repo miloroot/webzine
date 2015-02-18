@@ -204,6 +204,8 @@ $(function() {
 			cache: false,
 			success: function(html) {
 				$('body').html(html);
+
+				history.pushState({page: 2}, null, "new_page");
 			}
 		});
 
@@ -219,6 +221,8 @@ $(function() {
 			cache: false,
 			success: function(html) {
 				$('body').html(html);
+
+				history.pushState({page: 1}, null, "search");
 			}
 		});
 
@@ -234,6 +238,8 @@ $(function() {
 			cache: false,
 			success: function(html) {
 				$('body').html(html);
+
+				history.pushState({page: 3}, null, "modify_links");
 			}
 		});
 
