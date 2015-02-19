@@ -102,6 +102,35 @@ $(function() {
 	});
 
 
+	/*
+	//
+	// SECTION BELOW IS AJAX's CONNECTED TO BUTTONS.
+	//
+	*/
+	$(document).on("click", '.showthem', function() {
+		$.ajax({
+			url: "php/showallposts.php",
+			dataType: "json",
+			data: "showAllPosts",
+			success: function(data) {
+				console.log("Success LatestPosts data: ", data);
+
+				$('.showAllPosts').html(" ");
+				for (var i in data) {
+					var title = '<h2>' + data[i].title + '</h2>';
+					var body = '<p>' + data[i].body + '</p>';
+					var author = '<small>' + data[i].author + '</small>';
+					var created = '<small>' + data[i].created + '</small>';
+
+					$('.showAllPosts').prepend(title + body + author + ' - ' + created + '<br> <br>');
+				}
+			},
+			error: function(data) {
+				console.log("Error LatestPosts data: ", data);
+			}
+		});
+	});
+
 
 	/*
 	//
@@ -240,6 +269,21 @@ $(function() {
 				$('body').html(html);
 
 				history.pushState({page: 3}, null, "modify_links");
+			}
+		});
+
+		return false;
+	});
+
+
+	// ajax to load all posts view
+	$(document).on("click", '.allPosts', function() {
+		$.ajax({
+			url: "templates/allposts_template.html",
+			dataType: "html",
+			cache: false,
+			success: function(html) {
+				$('body').html(html);
 			}
 		});
 
