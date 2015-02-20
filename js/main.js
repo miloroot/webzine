@@ -284,6 +284,8 @@ $(function() {
 			cache: false,
 			success: function(html) {
 				$('body').html(html);
+
+				history.pushState(null, null, "all_posts");
 			}
 		});
 
@@ -339,6 +341,20 @@ $(function() {
 					$('body').html(html);
 
 					//history.pushState(null, null, "new_page");
+				}
+			});
+
+			return false;
+		}
+		else if (location.pathname == "/gitrepos/webzine/all_posts") {
+			$.ajax({
+				url: "templates/allposts_template.html",
+				dataType: "html",
+				cache: false,
+				success: function(html) {
+					$('body').html(html);
+
+					//history.pushState(null, null, "all_posts");
 				}
 			});
 
