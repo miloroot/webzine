@@ -1,7 +1,7 @@
 $(function() {
 
 	// DOM-Ready and working? : YES.
-	console.log('Hello world, this is a webzine.');
+	console.log('Hello world, this is a webzine. But still more of a blog!');
 
 	// Just a thing for fun! 
 	// If pw is google, a template will be loaded
@@ -107,6 +107,8 @@ $(function() {
 	// SECTION BELOW IS AJAX's CONNECTED TO BUTTONS.
 	//
 	*/
+
+
 	$(document).on("click", '.showthem', function() {
 		$.ajax({
 			url: "php/showallposts.php",
