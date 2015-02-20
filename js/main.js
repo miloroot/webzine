@@ -234,7 +234,7 @@ $(function() {
 			success: function(html) {
 				$('body').html(html);
 
-				history.pushState({page: 2}, null, "new_page");
+				history.pushState(null, null, "new_page");
 			}
 		});
 
@@ -251,7 +251,7 @@ $(function() {
 			success: function(html) {
 				$('body').html(html);
 
-				history.pushState({page: 1}, null, "search");
+				history.pushState(null, null, "search");
 			}
 		});
 
@@ -268,7 +268,7 @@ $(function() {
 			success: function(html) {
 				$('body').html(html);
 
-				history.pushState({page: 3}, null, "modify_links");
+				history.pushState(null, null, "modify_links");
 			}
 		});
 
@@ -289,5 +289,61 @@ $(function() {
 
 		return false;
 	});
+
+
+	/*
+	//
+	// SECTION BELOW MAKES BACK AND FORWARD BUTTONS IN BROWSER WORK.
+	// BUT YOU NEED TO HAVE THE SITE-FILES IN DIRECTORY "/gitrepos/webzine/".
+	//
+	*/
+
+
+	window.onpopstate = function(event) {
+		console.log('pathname: ' + location.pathname);
+
+		if (location.pathname == "/gitrepos/webzine/modify_links") {
+			$.ajax({
+				url: "templates/editlinks_template.html",
+				dataType: "html",
+				cache: false,
+				success: function(html) {
+					$('body').html(html);
+
+					//history.pushState(null, null, "modify_links");
+				}
+			});
+
+			return false;
+		}
+		else if (location.pathname == "/gitrepos/webzine/search") {
+			$.ajax({
+				url: "templates/search_template.html",
+				dataType: "html",
+				cache: false,
+				success: function(html) {
+					$('body').html(html);
+
+					//history.pushState(null, null, "search");
+				}
+			});
+
+			return false;
+		}
+		else if (location.pathname == "/gitrepos/webzine/new_page") {
+			$.ajax({
+				url: "templates/newpage_template.html",
+				dataType: "html",
+				cache: false,
+				success: function(html) {
+					$('body').html(html);
+
+					//history.pushState(null, null, "new_page");
+				}
+			});
+
+			return false;
+		}
+	}
 
 });
