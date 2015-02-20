@@ -5,7 +5,7 @@ $(function() {
 
 	// Just a thing for fun! 
 	// If pw is google, a template will be loaded
-	$('.login').on("click", (function() {
+	$(document).on("click", '.login', function() {
 		var pw = prompt('Enter correct password:');
 		if(pw == "google") {
 
@@ -21,7 +21,7 @@ $(function() {
 		else {
 			alert('Bad password!');
 		}
-	}));
+	});
 
 
 	/*
