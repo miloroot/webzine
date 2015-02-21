@@ -1,3 +1,25 @@
+		<script>
+			$.ajax({
+				url: "php/getmenu.php",
+				dataType: "json",
+				data: "getMenuLinks",
+				success: function(data) {
+					console.log("Success data for main nav-bar: ", data);
+
+					for (var i in data) {
+						console.log("Success data for main nav-bar loop: ", data[i]);
+
+						$('.nav-pills').append('<li role="presentation">' + '<a href="' + data[i].link + '">' + data[i].title + '</a>' + '</li>');
+					}
+				},
+				error: function(data) {
+					console.log("Error data for main nav-bar: ", data);
+				}
+			});
+		</script>
+
+
+
 		<!-- HEADER/TOP AREA -->
 		<section class="container-fluid">
 			<div class="row header">
@@ -13,10 +35,6 @@
 				<div class="col-md-12">
 					<nav>
 						<ul class="nav nav-pills">
-							<li role="presentation"><a href="#">Home</a></li>
-							<li role="presentation"><a href="#">About</a></li>
-							<li role="presentation" class="allPosts"><a href="#">All posts</a></li>
-							<li role="presentation"><a href="#">Contact</a></li>
 							<li role="presentation" class="navbar-right"><button class="btn btn-info login">Log in <span class="glyphicon glyphicon-off"></span></button></li>
 						</ul>
 					</nav>
