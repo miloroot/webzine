@@ -102,6 +102,26 @@ $(function() {
 	});
 
 
+	// fetching the data that builds the nav-bar
+	$.ajax({
+		url: "php/getmenu.php",
+		dataType: "json",
+		data: "getMenuLinks",
+		success: function(data) {
+			console.log("Success data for main nav-bar: ", data);
+
+			for (var i in data) {
+				console.log("Success data for main nav-bar loop: ", data[i]);
+
+				$('.nav').append('<li role="presentation">' + '<a href="' + data[i].link + '">' + data[i].title + '</a>' + '</li>');
+			}
+		},
+		error: function(data) {
+			console.log("Error data for main nav-bar: ", data);
+		}
+	});
+
+
 	/*
 	//
 	// SECTION BELOW IS AJAX's CONNECTED TO BUTTONS.
