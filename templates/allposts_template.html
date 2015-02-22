@@ -9,7 +9,7 @@
 					for (var i in data) {
 						console.log("Success data for main nav-bar loop: ", data[i]);
 
-						$('.nav-pills').append('<li role="presentation">' + '<a href="' + data[i].link + '">' + data[i].title + '</a>' + '</li>');
+						$('.nav-pills').append('<li role="presentation" class="' + data[i].class + '">' + '<a href="#">' + data[i].title + '</a>' + '</li>');
 					}
 				},
 				error: function(data) {

@@ -9,7 +9,7 @@
 					for (var i in data) {
 						console.log("Success data for main nav-bar loop: ", data[i]);
 
-						$('.nav-pills').append('<li role="presentation">' + '<a href="' + data[i].link + '">' + data[i].title + '</a>' + '</li>');
+						$('.nav-pills').append('<li role="presentation" class="' + data[i].class + '">' + '<a href="#">' + data[i].title + '</a>' + '</li>');
 					}
 				},
 				error: function(data) {
@@ -60,34 +60,10 @@
 					<!-- EDIT LINKS FORM -->
 					<form class="editLinksForm">
 						<div class="form-group">
-							<label>L1 Text:</label>
+							<label>Text:</label>
 							<input type="text" class="form-control linkOne">
-							<label>L1 URL:</label>
+							<label>URL:</label>
 							<input type="text" class="form-control linkOneURL">
-						</div>
-						<hr>
-						<div class="form-group">
-							<label>L2 Text:</label>
-							<input type="text" class="form-control linkTwo">
-							<label>L2 URL:</label>
-							<input type="text" class="form-control linkTwoURL">
-						</div>
-						<hr>
-						<div class="form-group">
-							<label>L3 Text:</label>
-							<input type="text" class="form-control linkThree">
-							<label>L3 URL:</label>
-							<input type="text" class="form-control linkThreeURL">
-						</div>
-						<hr>
-						<div class="form-group">
-							<label>L4 Text:</label>
-							<input type="text" class="form-control linkFour">
-							<label>L4 URL:</label>
-							<input type="text" class="form-control linkFourURL">
-						</div>
-						<div class="form-group">
-							<button class="btn btn-primary" type="submit">Save links <span class="glyphicon glyphicon-ok"></span></button>
 						</div>
 					</form>
 				</div>
@@ -98,13 +74,7 @@
 						The links everyone are able to see and use. 
 					</p>
 					<p>
-						L1 stands for Link 1, and so on. <br>
-						L1 is most left and L4 is most right, so it goes from left to right. <br>
-						Text is the link-text you want the visitor to see, and URL is the url wich <br> that link will go to.
-					</p>
-					<p>
-						<b>Please note!</b> <br>
-						The URL must be a URL wich you have used in previous pages/posts you have created.
+						Form-function yet to come.
 					</p>
 				</div>
 			</div>

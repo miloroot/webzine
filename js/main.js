@@ -113,7 +113,7 @@ $(function() {
 			for (var i in data) {
 				console.log("Success data for main nav-bar loop: ", data[i]);
 
-				$('.nav').append('<li role="presentation">' + '<a href="' + data[i].link + '">' + data[i].title + '</a>' + '</li>');
+				$('.nav').append('<li role="presentation" class="' + data[i].class + '">' + '<a href="#">' + data[i].title + '</a>' + '</li>');
 			}
 		},
 		error: function(data) {
